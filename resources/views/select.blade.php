@@ -22,7 +22,7 @@ $icon = config('ignite.select.icon');
         />
 
         @if ($icon)
-        <x-icon name="{{ $icon }}" class="-ml-6 h-5 w-5 text-gray-500" />
+        {{ svg("$icon")->class("-ml-6 h-5 w-5 text-gray-500") }}
         @endif
     </div>
 
