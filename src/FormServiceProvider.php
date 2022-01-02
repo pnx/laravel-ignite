@@ -28,6 +28,11 @@ class FormServiceProvider extends ServiceProvider
         View\Components\Select::class
     ];
 
+	public function register()
+    {
+        $this->mergeConfigFrom(__DIR__.'/../config/ignite.php', 'ignite');
+    }
+
     /**
      * Register blade components.
      *
@@ -38,6 +43,10 @@ class FormServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__.'/../resources/views' => resource_path('views/vendor/ignite'),
         ], 'ignite-views');
+
+		$this->publishes([
+            __DIR__.'/../config/ignite.php' => $this->app->configPath('ignite.php'),
+        ], 'ignite-config');
 
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'ignite');
 
