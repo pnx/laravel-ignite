@@ -13,6 +13,9 @@
     "require-dev": {
         "phpunit/phpunit": "^9.3"
     },
+	"suggest": {
+        "blade-ui-kit/blade-icons": "For adding icons to form elements."
+    },
     "autoload": {
         "psr-4": {
             "Ignite\\": "src"
