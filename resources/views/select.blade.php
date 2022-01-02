@@ -1,5 +1,10 @@
 <?php
 
+// Abit ugly to call a init function from view script
+// and pass $_instance variable (livewire defines it).
+// But it works, so do it for now :)
+$init($_instance ?? null);
+
 $icon = config('ignite.select.icon');
 ?>
 
