@@ -1,4 +1,4 @@
-<form method="{{ $method }}" action="{{ $action }}">
+<form method="{{ $method }}" action="{{ $action }}" {!! $attributes->except('action', 'method') !!}>
     @if($realmethod)@method($realmethod)@endif
     @csrf
 
