@@ -1,3 +1,7 @@
+<?php
+
+$icon = config('ignite.select.icon');
+?>
 
 <div class="relative inline-block w-full"
     x-init="$watch('value', (v) => { $refs.input.dispatchEvent(new Event('input')); })"
@@ -17,7 +21,9 @@
             readonly
         />
 
-        <x-icon name="chevron-up-down" class="-ml-6 h-5 w-5 text-gray-500" />
+        @if ($icon)
+        <x-icon name="{{ $icon }}" class="-ml-6 h-5 w-5 text-gray-500" />
+        @endif
     </div>
 
     {{-- Dropdown menu --}}
