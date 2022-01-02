@@ -92,21 +92,27 @@ class Select extends Component
         $this->placeholder = $placeholder;
         $this->displayField = $displayField;
         $this->dropdown_class = $dropdownClass;
-
-        // If we have a null value but the field is required.
-        // Fetch the first value from options.
-        if ($this->value === null && $this->required) {
-            $this->value = collect($this->options)->flip()->first();
-        }
-
-        // Set display value.
-        if ($this->value !== null && isset($this->options[$this->value])) {
-            $option = $this->options[$this->value];
-            $this->display = $this->getDisplayValue($option);
-        } else {
-            $this->display = $this->placeholder;
-        }
     }
+
+	/**
+	 * Initialize the component.
+	 */
+	public function init()
+	{
+		// If we have a null value but the field is required.
+		// Fetch the first value from options.
+		if ($this->value === null && $this->required) {
+			$this->value = collect($this->options)->flip()->first();
+		}
+
+		// Set display value.
+		if ($this->value !== null && isset($this->options[$this->value])) {
+			$option = $this->options[$this->value];
+			$this->display = $this->getDisplayValue($option);
+		} else {
+			$this->display = $this->placeholder;
+		}
+	}
 
     public function jsonOptions()
     {
