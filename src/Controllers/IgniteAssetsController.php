@@ -6,6 +6,6 @@ class IgniteAssetsController
 {
     public function jsSource()
     {
-        return response()->file(__DIR__.'/../../dist/ignite.js');
+        return response()->file(__DIR__.'/../../dist/ignite.js', [ 'Content-Type' => 'text/javascript' ]);
     }
 }
