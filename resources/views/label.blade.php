@@ -13,5 +13,5 @@ default :
 @endphp
 
 <label {{ $attributes->merge([ 'class' => $classes ]) }}>
-    {{ $value ?? $slot }}
+    {{ $slot }}
 </label>

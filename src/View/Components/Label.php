@@ -8,11 +8,8 @@ class Label extends Component
 {
     public $type;
 
-    public $value;
-
-    public function __construct($value = null, $type = 'block')
+    public function __construct($type = 'block')
     {
-        $this->value = $value;
         $this->type = $type;
     }
 
