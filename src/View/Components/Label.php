@@ -6,6 +6,9 @@ use Illuminate\View\Component;
 
 class Label extends Component
 {
+	/**
+	 * What type of label (controls additional css classes that will be applied)
+	 */
     public $type;
 
     public function __construct($type = 'block')

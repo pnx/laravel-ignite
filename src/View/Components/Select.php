@@ -65,8 +65,10 @@ class Select extends Component
     public $options;
 
 
+	/**
+	 * Additional classes applied to dropdown container.
+	 */
     public string $dropdown_class;
-
 
     /**
      * Create a new component instance.

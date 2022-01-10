@@ -12,6 +12,12 @@ class Form extends Component
     /** @var string */
     public $method;
 
+	/**
+	 * Used to spoof PUT, PATCH, or DELETE requests
+	 * as forms can only make GET/POST.
+	 *
+	 * @var string
+	 */
     public $realmethod;
 
     public function __construct(string $action, string $method = 'POST')
