@@ -1,5 +1,6 @@
 {
     "name": "pnx/laravel-ignite",
+    "license": "MIT",
     "type": "library",
     "authors": [
         {
