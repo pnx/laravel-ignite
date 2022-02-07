@@ -1,5 +1,6 @@
 {
     "name": "pnx/laravel-ignite",
+    "description": "Laravel package for enhanced form ui",
     "license": "MIT",
     "type": "library",
     "authors": [
