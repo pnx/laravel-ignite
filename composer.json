@@ -13,7 +13,9 @@
         "illuminate/view": "^7.0|^8.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "^9.3"
+        "phpunit/phpunit": "^9.3",
+        "orchestra/testbench": "^6.24",
+        "laravel/framework": "^7.0|^8.0"
     },
 	"suggest": {
         "blade-ui-kit/blade-icons": "For adding icons to form elements."
