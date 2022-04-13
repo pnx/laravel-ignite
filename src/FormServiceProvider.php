@@ -25,7 +25,8 @@ class FormServiceProvider extends ServiceProvider
         View\Components\Input::class,
         View\Components\Password::class,
         View\Components\Email::class,
-        View\Components\Select::class
+        View\Components\Select::class,
+        View\Components\Textarea::class
     ];
 
 	public function register()
