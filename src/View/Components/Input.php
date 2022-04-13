@@ -2,44 +2,14 @@
 
 namespace Ignite\View\Components;
 
-use Illuminate\View\Component;
-
-class Input extends Component
+class Input extends AbstractInput
 {
-    /**
-     * Id attribute
-     *
-     * @var string
-     */
-    public string $id;
-
-    /**
-     * Name attribute
-     *
-     * @var string
-     */
-    public string $name;
-
-    /**
-     * Value attribute
-     *
-     * @var string|null
-     */
-    public ?string $value;
-
     /**
      * Type attribute
      *
      * @var string|null
      */
     public string $type;
-
-    /**
-     * Disabled attribute
-     *
-     * @var string|null
-     */
-    public string $disabled;
 
     /**
      * Create a new component instance.
@@ -53,11 +23,8 @@ class Input extends Component
      */
     public function __construct(string $name, ?string $id = null, string $type = 'text', ?string $value = '', bool $disabled = false)
     {
-        $this->name = $name;
-        $this->id = $id ?? $name;
         $this->type = $type;
-        $this->value = old($name, $value);
-        $this->disabled = $disabled ? 'disabled' : '';
+        $this->init($name, $id, $value, $disabled);
     }
 
     /**
