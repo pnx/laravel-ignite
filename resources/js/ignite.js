@@ -8,7 +8,6 @@ const select_dropdown = (data) => {
 		value: data.value ?? null,
 		display: data.display ?? '',
 		placeholder: data.placeholder ?? 'Select an option',
-		selected_html: '',
 
 		// Methods
 		// ----------------
@@ -24,11 +23,6 @@ const select_dropdown = (data) => {
 			this.value = value;
 			this.display = display;
 			this.close();
-		},
-
-		selectHtml(ele) {
-			console.log(ele.outerHTML);
-			this.selected_html = ele.outerHTML;
 		},
 
 		// Select placeholder
