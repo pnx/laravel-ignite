@@ -37,6 +37,9 @@
             "providers": [
                 "Ignite\\FormServiceProvider"
             ]
+        },
+        "branch-alias": {
+            "dev-master": "0.1.x-dev"
         }
     }
 }
