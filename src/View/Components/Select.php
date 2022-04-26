@@ -108,7 +108,7 @@ class Select extends Component
 			// If so. check for wire:model value and set $this->value
 			$value = $this->attributes->wire('model')->value();
 			if ($value) {
-				$this->value = Helpers::objGetNested($livewire, $value);
+				$this->value = Arr::get($livewire->all(), $value);
 			}
 		}
 
