@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Components;
+namespace Tests\View\Components;
 
 use Ignite\View\Components\Input;
 use Tests\TestCase;
