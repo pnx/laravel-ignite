@@ -10,6 +10,16 @@ class TestCase extends BaseTestCase
 {
     use InteractsWithViews;
 
+    /**
+     * Define database migrations.
+     *
+     * @return void
+     */
+    protected function defineDatabaseMigrations()
+    {
+        $this->loadMigrationsFrom(__DIR__ . '/database/migrations');
+    }
+
     protected function getPackageProviders($app): array
     {
         return [ServiceProvider::class];
