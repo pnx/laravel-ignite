@@ -6,9 +6,9 @@ use Ignite\Controllers\IgniteAssetsController;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Blade;
-use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\ServiceProvider as BaseServiceProvider;
 
-class FormServiceProvider extends ServiceProvider
+class ServiceProvider extends BaseServiceProvider
 {
     /**
      * Define alias component mapping.
