@@ -32,6 +32,8 @@ class ServiceProvider extends BaseServiceProvider
 	public function register()
     {
         $this->mergeConfigFrom(__DIR__.'/../config/ignite.php', 'ignite');
+
+        $this->app->singleton(ResourceManager::class);
     }
 
     /**
