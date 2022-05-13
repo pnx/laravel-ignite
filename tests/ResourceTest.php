@@ -96,7 +96,10 @@ class ResourceTest extends TestCase
     public function test_default_query()
     {
         $resource = new UserQueryResource();
-        $this->assertStringContainsString('order by "name" desc, "email" asc', $resource->query()->toSql());
+        $expected = 'order by "name" desc, "email" asc';
+
+        $this->assertStringContainsString($expected, $resource->query()->toSql());
+        $this->assertStringContainsString($expected, UserQueryResource::query()->toSql());
     }
 
     public function test_new()
