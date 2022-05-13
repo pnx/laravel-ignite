@@ -40,6 +40,13 @@ abstract class Resource
     public static $search = [ 'id' ];
 
     /**
+     * Limit the number of rows when querying the resource.
+     *
+     * @var integer
+     */
+    public static $query_limit = 15;
+
+    /**
      * Constructor.
      */
     public function __construct($id = null)
@@ -115,11 +122,14 @@ abstract class Resource
     }
 
     /**
-     * Intercept call to Model::query() and apply self::defaultQuery() first.
+     * Intercept call to Model::query() and apply defaultQuery() and query limit first.
      */
     public static function query()
     {
-        return (new static)->defaultQuery(static::$model::query());
+        $query = static::$model::query()
+            ->limit(static::$query_limit);
+
+        return (new static)->defaultQuery($query);
     }
 
     /**

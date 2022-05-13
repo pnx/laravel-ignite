@@ -93,6 +93,13 @@ class ResourceTest extends TestCase
         $this->assertEquals('test@example.com', $resource->subtitle());
     }
 
+    public function test_query()
+    {
+        $resource = new UserResource();
+
+        $this->assertStringContainsString('limit 15', $resource->query()->toSql());
+    }
+
     public function test_default_query()
     {
         $resource = new UserQueryResource();
