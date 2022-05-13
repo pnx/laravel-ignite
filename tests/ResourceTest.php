@@ -95,9 +95,6 @@ class ResourceTest extends TestCase
 
     public function test_default_query()
     {
-        User::create(['id' => 1, 'name' => 'Some name', 'email' => 'test@example.com']);
-        User::create(['id' => 1, 'name' => 'Some name2', 'email' => 'test2@example.com']);
-
         $resource = new UserQueryResource();
         $this->assertStringContainsString('order by "name" desc, "email" asc', $resource->query()->toSql());
     }
