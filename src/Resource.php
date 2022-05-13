@@ -123,7 +123,7 @@ abstract class Resource
     }
 
     /**
-     *
+     * Magic method to get resource attributes.
      */
     public function __get($name)
     {
@@ -131,7 +131,7 @@ abstract class Resource
     }
 
     /**
-     *
+     * Forward dynamic method calls to model instance.
      */
     public function __call($method, $arguments)
     {
@@ -139,7 +139,7 @@ abstract class Resource
     }
 
     /**
-     *
+     * Forward dynamic static method calls to model.
      */
     public static function __callStatic($method, $arguments)
     {
