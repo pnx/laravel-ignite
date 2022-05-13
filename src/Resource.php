@@ -117,9 +117,9 @@ abstract class Resource
     /**
      * Intercept call to Model::query() and apply self::defaultQuery() first.
      */
-    public function query()
+    public static function query()
     {
-        return $this->defaultQuery(static::$model::query());
+        return (new static)->defaultQuery(static::$model::query());
     }
 
     /**
