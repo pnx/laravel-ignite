@@ -107,6 +107,22 @@ abstract class Resource
     }
 
     /**
+     * Configure the default query to use.
+     */
+    public function defaultQuery($query)
+    {
+        return $query;
+    }
+
+    /**
+     * Intercept call to Model::query() and apply self::defaultQuery() first.
+     */
+    public function query()
+    {
+        return $this->defaultQuery(static::$model::query());
+    }
+
+    /**
      *
      */
     public function __get($name)
