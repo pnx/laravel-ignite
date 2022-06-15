@@ -2,12 +2,13 @@
 
 namespace Ignite\View\Components;
 
-use Illuminate\Support\Arr;
 use Illuminate\View\Component;
 use Ignite\Helpers;
 
 class Select extends Component
 {
+    use Traits\Livewire;
+
     /**
      * Id attribute
      *
@@ -102,21 +103,7 @@ class Select extends Component
 	 */
 	public function init($livewire)
 	{
-		// Check if Livewire is present.
-		if ($livewire && class_exists('\Livewire\WireDirective')) {
-
-			// If so. check for wire:model value and set $this->value
-			$value = $this->attributes->wire('model')->value();
-			if ($value) {
-				$value = Arr::get($livewire->all(), $value);
-
-                if (is_object($value) && method_exists($value, 'toString')) {
-                    $this->value = $value->toString();
-                } else {
-                    $this->value = $value;
-                }
-			}
-		}
+        $this->initLivewire($livewire);
 
 		// If we have a null value but the field is required.
 		// Fetch the first value from options.
