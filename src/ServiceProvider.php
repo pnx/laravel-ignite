@@ -26,7 +26,8 @@ class ServiceProvider extends BaseServiceProvider
         View\Components\Password::class,
         View\Components\Email::class,
         View\Components\Select::class,
-        View\Components\Textarea::class
+        View\Components\Textarea::class,
+        View\Components\ToggleSwitch::class,
     ];
 
 	public function register()
