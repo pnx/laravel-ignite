@@ -3,7 +3,6 @@
 namespace Ignite\View\Components;
 
 use Illuminate\View\Component;
-use Ignite\Helpers;
 
 class Select extends Component
 {
