@@ -28,6 +28,7 @@ class ServiceProvider extends BaseServiceProvider
         View\Components\Select::class,
         View\Components\Textarea::class,
         View\Components\ToggleSwitch::class,
+        View\Components\Checkbox::class,
     ];
 
 	public function register()
