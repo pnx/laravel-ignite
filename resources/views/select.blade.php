@@ -9,7 +9,6 @@ $icon = config('ignite.select.icon');
 ?>
 
 <div class="relative inline-block w-full"
-    x-init="$watch('value', (v) => { $refs.input.dispatchEvent(new Event('input')); })"
     x-data="Ignite.select_dropdown({{ $jsonOptions() }})"
     x-on:click.away="close()"
     x-on:close.stop="close()">
