@@ -11,6 +11,7 @@ const select_dropdown = (data) => {
 
 		// Methods
 		// ----------------
+        init() { this.$watch('value', v => { this.$refs.input.dispatchEvent(new Event('input')); })},
 
 		// Helper methods.
 		open() { this.show = true },
