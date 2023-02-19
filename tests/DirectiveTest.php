@@ -10,7 +10,7 @@ class DirectiveTest extends TestCase
     {
         $this->get('/ignite/ignite.js')
             ->assertStatus(200)
-            ->assertHeader('Content-Type', 'text/javascript');
+            ->assertHeader('Content-Type', 'text/javascript; charset=UTF-8');
     }
 
     public function test_can_render_script_directive()
